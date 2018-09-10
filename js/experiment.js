@@ -76,10 +76,6 @@ function initExperiment() {
 
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e){
-	var selectedItem = document.getElementById("selectedItem");
-	if (selectedItem.innerHTML === "&nbsp;") {
-		return;
-	}
 	e.preventDefault();
 	nextTrial();
 	
@@ -297,7 +293,7 @@ function toggleRadialMenu(e) {
 		
 		// Record previous item
 		tracker.recordSelectedItem(null);
-		
+
 		if(radialMenuTree != null){
 			menu = module.exports(radialMenuTree, {
 				x: e.clientX,
@@ -313,7 +309,7 @@ function toggleRadialMenu(e) {
 
 //Callback for radialmenu when a leaf node is selected
 function radialMenuOnSelect() {
-
+	
 	tracker.recordSelectedItem(this.id);
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
