@@ -45,6 +45,7 @@ function initExperiment() {
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
 		var cells = records[i].split(",");
+		console.log(cells);
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
 		var inputStyle = cells[2].trim();
