@@ -1,6 +1,7 @@
 // Class used to track experiment
 class ExperimentTracker {
   constructor() {
+    this.id = (new URL(document.location)).searchParams.get("part_id");
     this.trials = [];
     this.attempt = 0;
     this.trial = null;
@@ -33,6 +34,7 @@ class ExperimentTracker {
     this.endTime = Date.now();
     this.timeTaken = (this.endTime - this.startTime) / 1000;
     this.trials.push([
+      this.id,
       this.trial,
       this.attempt,
       this.menuType,
@@ -54,7 +56,7 @@ class ExperimentTracker {
 
   toCsv() {
     var csvFile =
-      'Trial,Attempt,Menu Type,Menu Depth,Input Style,Target Item,Selected Item,Start Time, End Time, Time Taken (s)\n';
+      'Participant ID,Trial,Attempt,Menu Type,Menu Depth,Input Style,Target Item,Selected Item,Start Time(ms), End Time(ms), Time Taken(s)\n';
     for (var i = 0; i < this.trials.length; i++) {
       csvFile += this.trials[i].join(',');
       csvFile += '\n';

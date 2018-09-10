@@ -590,14 +590,17 @@ body > svg > text {
   border-color: transparent;
 }
 
-a {
+/* a {
   color: #ffffff;
   text-decoration: none;
+}
+
+#instructions {
+  padding: 20px;
 }
 
 .center {
   display: flex;
   align-items: center;
   flex-direction: column;
-  text-align: center;
-}
+} */

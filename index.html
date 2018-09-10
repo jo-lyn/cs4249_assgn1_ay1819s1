@@ -6,22 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instructions</title>
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Condensed' rel='stylesheet' type='text/css'>
-    <!-- Experiment Stylesheet -->
-    <link href="./css/experiment.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">    
+    <link href="./css/main.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="instructions" class="center">
-        <div>
-            <h1>Welcome!</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui voluptate consequatur fugiat reiciendis
-                saepe adipisci. Error dolore nesciunt impedit exercitationem! Doloremque cumque consequuntur assumenda
-                esse quo non ratione quia sed.</p>
-        </div>
-        <button id="startButton" class="btn btn-primary btn-lg"><a href="./experiment.html">Start</a></button>
+    <div id="instructions" class="container content">
+        <h1>Instructions</h1>
+        <p>Welcome, Participant! 🙂</p>
+        <p>This section will explain the interface of the test environment, as well as 
+                how to use the marking and radial menu.
+        </p>
+        <form id="part_id" class="center" action="./experiment.html">
+            <h2>Participant ID:
+                <input type="text" name="part_id">
+            </h2>
+            <button id="startButton" class="btn btn-primary btn-lg">START</button>
+        </form>
     </div>
 </body>
+
+<!-- Experiment Scripts -->
+<script src="./js/experiment-tracker.js"></script>
+<script src="./js/experiment.js"></script>
 
 </html>
