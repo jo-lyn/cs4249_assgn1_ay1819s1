@@ -21,8 +21,7 @@ var radialMenuL3 = [];
 var tracker = new ExperimentTracker();
 var markingMenuSubscription = null;
 var radialMenuSvg = null;
-
-
+var numPopUps = 0;
 
 
 
@@ -45,7 +44,6 @@ function initExperiment() {
 	numTrials = records.length - 1;
 	for (var i = 1; i <= numTrials; i++) {
 		var cells = records[i].split(",");
-		console.log(cells);
 		var menuType = cells[0].trim();
 		var menuDepth = cells[1].trim();
 		var inputStyle = cells[2].trim();
@@ -213,16 +211,16 @@ function formatMarkingMenuData(data) {
 	return menuItemsList;
 }
 
-// Function to start tracking timer on mouse down
+// Function to start tracking timer and add popup count on mouse down
 function markingMenuOnMouseDown(){
-
 	tracker.startTimer();
+	numPopUps++;
 }
 
 //Function to start tracking timer on mouse down
 function markingMenuOnSelect(selectedItem){
-
-	tracker.recordSelectedItem(selectedItem.name);
+	tracker.recordSelectedItem(selectedItem.name, numPopUps);
+	numPopUps = 0;
 	document.getElementById("selectedItem").innerHTML = selectedItem.name;
 }
 
@@ -287,8 +285,9 @@ function toggleRadialMenu(e) {
 					y: e.clientY
 				}, radialMenuSvg);
 		
-			// Start timing once menu appears
+			// Start timing and add popup count once menu appears
 			tracker.startTimer();
+			numPopUps++;
 		}
 	}else{
 		
@@ -301,8 +300,9 @@ function toggleRadialMenu(e) {
 				y: e.clientY
 			}, radialMenuSvg);
 	
-		// Start timing once menu appears
+		// Start timing and add popup count once menu appears
 		tracker.startTimer();
+		numPopUps++;
 		}
 	}
 	e.preventDefault();
@@ -311,7 +311,9 @@ function toggleRadialMenu(e) {
 //Callback for radialmenu when a leaf node is selected
 function radialMenuOnSelect() {
 	
-	tracker.recordSelectedItem(this.id);
+	tracker.recordSelectedItem(this.id, numPopUps);
+	numPopUps = 0;
+
 	var radialmenu = document.getElementById('radialmenu');
 	radialmenu.parentNode.removeChild(radialmenu);
 	
