@@ -6,28 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instructions</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">    
-    <link href="./css/main.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">     -->
+    <link href="./css/external/bulma.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="instructions" class="container content">
-        <h1>Instructions</h1>
-        <p>Welcome, Participant! 🙂</p>
-        <p>This section will explain the interface of the test environment, as well as 
-                how to use the marking and radial menu.
-        </p>
-        <form id="part_id" class="center" action="./experiment.html">
-            <h2>Participant ID:
-                <input type="text" name="part_id">
-            </h2>
-            <button id="startButton" class="btn btn-primary btn-lg">START</button>
-        </form>
+
+    <div class="columns">
+        <div id="instructions" class="column is-three-fifths container content">
+            <section class="section">
+                <h1 class="title is-size-2 has-text-weight-bold">Instructions</h1>
+                <p class="is-size-5">Welcome, participant! 🙂</p>
+                <p>This section will explain everything you need to know about the experiment before we begin.</p>
+            </section>
+            <section class="section">
+                <h2>Process</h2>
+                <p>
+                    You will be selecting a total of <strong>48 items</strong> from both the marking and radial menu.
+                    The menu will have <strong>different level of depths</strong>, and you will be prompted to <strong>switch
+                        between
+                        using the mouse or the trackpad</strong> several times during the experiment.
+                </p>
+                <p>The entire process will take between 10-15 minutes. Your schedule is as follows:</p>
+                <div class="is-size-5 has-text-black">
+                    <div>📑 <strong>Instructions</strong></div>
+                    <div>📑 Pre-experiment Questionnare</div>
+                    <div>📑 Practice Trials</div>
+                    <div>📑 Main Experiment (with breaks)</div>
+                    <div>📑 Pre-experiment Questionnare</div>
+                </div>
+
+            </section>
+            <section class="section">
+                <h2>Environment</h2>
+                <p>This is the interface of the test environment you will be working with.</p>
+                <img src="./assets/interface.png" alt="interface">
+
+            </section>
+            <section class="section">
+                <h2>Marking Menu</h2>
+                <p>Selection by stroking in the direction of the target item.</p>
+                <h3>Controls</h3>
+                <div><strong>Open Menu:</strong> Left click (hold down to keep menu open)</div>
+                <div><strong>Select:</strong> Stroke to item node and release mouse</div>
+                <h3>Example</h3>
+                <p>Clothing > Hats</p>
+                <video src="./assets/marking_menu.mp4" controls></video>
+                <div class="notification is-danger">
+                    <p><strong>Note: </strong>If you can remember the location of the target item,
+                        you can make a fast stroke instead of waiting for the menu to pop up.</p>
+                </div>
+            </section>
+            <section class="section">
+                <h2>Radial Menu</h2>
+                <p>Selection from a circular context menu.</p>
+                <h3>Controls</h3>
+                <div><strong>Open Menu:</strong> Right click</div>
+                <div><strong>Select:</strong> Left click</div>
+                <h3>Example</h3>
+                <p>Food > Vegetables</p>
+                <video src="./assets/radial_menu.mp4" controls></video>
+            </section>
+
+            <section class="section">
+                <h2>End of Instructions</h2>
+                <p>Feel free to ask if you have any further questions. Once you are ready, select your participant ID
+                    below to proceed.</p>
+                <form id="part_id" class="field" action="./experiment.html">
+                    <label class="label">Participant ID</label>
+                    <div class="control has-icons-left">
+                        <div class="select">
+                            <select name="part_id">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <span class="icon is-left">👤</span>
+                        <button id="startButton" class="button is-danger">
+                            <span class="has-text-white">Start</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </div>
 </body>
-
-<!-- Experiment Scripts -->
-<script src="./js/experiment-tracker.js"></script>
-<script src="./js/experiment.js"></script>
 
 </html>
