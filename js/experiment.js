@@ -1,10 +1,11 @@
 'use strict';
 
 // Location of data files
-const trialsFile = "./data/experiments.csv"
-const menuL1File = "./data/menu_depth_1.csv"
-const menuL2File = "./data/menu_depth_2.csv"
-const menuL3File = "./data/menu_depth_3.csv"
+const partId = (new URL(document.location)).searchParams.get("part_id");
+const trialsFile = `./data/experiments_${partId}.csv`;
+const menuL1File = "./data/menu_depth_1.csv";
+const menuL2File = "./data/menu_depth_2.csv";
+const menuL3File = "./data/menu_depth_3.csv";
 
 // Global variables
 var menu;
@@ -94,11 +95,16 @@ function nextTrial() {
 		document.getElementById("trialNumber").innerHTML = String(currentTrial) + "/" + String(numTrials);
 		document.getElementById("menuType").innerHTML = menuType;
         document.getElementById("menuDepth").innerHTML = menuDepth;
-        document.getElementById("inputStyle").innerHTML = inputStyle;
+		document.getElementById("inputStyle").innerHTML = inputStyle;
 		document.getElementById("targetItem").innerHTML = targetItem;
 		document.getElementById("selectedItem").innerHTML = "&nbsp;";
 		// Set IV3 state over here
-
+		if (inputStyle == "Mouse") {
+			document.getElementById("inputStyle").style = "color: rgb(255, 90, 130)";
+		} else {
+			document.getElementById("inputStyle").style = "color: rgb(134, 230, 215)";
+		}
+		
 		tracker.newTrial();
 		tracker.trial = currentTrial;
 		tracker.menuType = menuType;
