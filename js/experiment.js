@@ -77,6 +77,11 @@ function initExperiment() {
 // Wrapper around nextTrial() to prevent click events while loading menus
 function loadNextTrial(e){
 	e.preventDefault();
+	var nextButton = document.getElementById("nextButton");
+
+	if (nextButton.innerHTML === 'Done' && partId > 0) {
+		window.location = './post-quest.html';
+	}
 	nextTrial();
 	
 }
@@ -146,7 +151,8 @@ function nextTrial() {
 	} else {
 		
 	    var nextButton = document.getElementById("nextButton");
-	    nextButton.innerHTML = "Done";
+		nextButton.innerHTML = "Done";
+		nextButton.style = "background: #FF2B56";
 		tracker.toCsv();
 	}
 }
