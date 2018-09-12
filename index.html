@@ -16,6 +16,7 @@
     <div class="columns">
         <div id="instructions" class="column is-three-fifths container content">
             <section class="section">
+                <span class="is-size-2">📋</span>
                 <h1 class="title is-size-2 has-text-weight-bold">Instructions</h1>
                 <p class="is-size-5">Welcome, participant! 🙂</p>
                 <p>This section will explain everything you need to know about the experiment before we begin.</p>
@@ -24,13 +25,12 @@
                 <h2>Process</h2>
                 <p>
                     You will be selecting a total of <strong>48 items</strong> from both the marking and radial menu.
-                    The menu will have <strong>different level of depths</strong>, and you will be prompted to <strong>switch
-                        between
-                        using the mouse or the trackpad</strong> several times during the experiment.
+                    The menu will have different level of depths, and you will be prompted to <strong>switch
+                        between using the mouse or the trackpad</strong> several times during the experiment.
                 </p>
                 <p>The entire process will take between 10-15 minutes. Your schedule is as follows:</p>
                 <div class="is-size-5 has-text-black">
-                    <div>📑 <strong>Instructions</strong></div>
+                    <div>📑 <strong>Instructions 👈🏼</strong></div>
                     <div>📑 Pre-experiment Questionnare</div>
                     <div>📑 Practice Trials</div>
                     <div>📑 Main Experiment (with breaks)</div>
@@ -70,9 +70,25 @@
             </section>
 
             <section class="section">
-                <h2>End of Instructions</h2>
-                <p>Feel free to ask if you have any further questions. Once you are ready, select your participant ID
-                    below to proceed.</p>
+                <h2>End of Instructions / Practice Trial</h2>
+                <p>
+                    Feel free to ask if you have any further questions. To help you become comfortable with using the
+                    menus, we
+                    have prepared a <strong>practice trial</strong> which will not be recorded.
+                </p>
+                <p>
+                    The practice trial will be opened in a new tab so that you can come back to the instructions at any
+                    point where you are stuck.
+                </p>
+                <a class="button is-link is-outlined" href="./experiment.html?part_id=0" target="_blank">Start Practice
+                    Trial</a>
+            </section>
+            <section class="section">
+                <h2>Begin Experiment</h2>
+                <p>Once you have finished the practice trial, select your participant ID
+                    below to proceed to the main experiment.</p>
+
+                <!-- form -->
                 <form id="part_id" class="field" action="./experiment.html">
                     <label class="label">Participant ID</label>
                     <div class="control has-icons-left">
@@ -88,10 +104,11 @@
                         </div>
                         <span class="icon is-left">👤</span>
                         <button id="startButton" class="button is-danger">
-                            <span class="has-text-white">Start</span>
+                            <span class="has-text-white">Start Experiment</span>
                         </button>
                     </div>
                 </form>
+                <!-- end form -->
             </section>
         </div>
     </div>

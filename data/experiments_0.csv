@@ -1,0 +1,13 @@
+Menu Type,Menu Depth,Input Style,Target Item
+Marking,1,Mouse,Clothing
+Marking,2,Mouse,Hats
+Marking,3,Mouse,Jeans
+Radial,1,Mouse,Continents
+Radial,2,Mouse,Africa
+Radial,3,Mouse,USA
+Marking,1,Trackpad,Food
+Marking,2,Trackpad,Meat
+Marking,3,Trackpad,Potatoes
+Radial,1,Trackpad,Animals
+Radial,2,Trackpad,Birds
+Radial,3,Trackpad,Shark
