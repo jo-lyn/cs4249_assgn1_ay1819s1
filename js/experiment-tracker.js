@@ -1,7 +1,7 @@
 // Class used to track experiment
 class ExperimentTracker {
   constructor() {
-    this.partId = (new URL(document.location)).searchParams.get("part_id");
+    this.partId = new URL(document.location).searchParams.get('part_id');
     this.trials = [];
     this.attempt = 0;
     this.trial = null;
@@ -63,18 +63,21 @@ class ExperimentTracker {
   }
 
   toCsv() {
-    var csvFile =
-      'Participant ID,Trial,Attempt,Menu Type,Menu Depth,Input Style,Target Item,Selected Item,Start Time(ms), End Time(ms), Time Taken(s), Popups\n';
-    for (var i = 0; i < this.trials.length; i++) {
-      csvFile += this.trials[i].join(',');
-      csvFile += '\n';
-    }
+    // not practice trial
+    if (partId > 0) {
+      var csvFile =
+        'Participant ID,Trial,Attempt,Menu Type,Menu Depth,Input Style,Target Item,Selected Item,Start Time(ms), End Time(ms), Time Taken(s), Popups\n';
+      for (var i = 0; i < this.trials.length; i++) {
+        csvFile += this.trials[i].join(',');
+        csvFile += '\n';
+      }
 
-    var hiddenLink = document.createElement('a');
-    hiddenLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvFile);
-    hiddenLink.target = '_blank';
-    hiddenLink.download = 'experiment.csv';
-    document.body.appendChild(hiddenLink);
-    hiddenLink.click();
+      var hiddenLink = document.createElement('a');
+      hiddenLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvFile);
+      hiddenLink.target = '_blank';
+      hiddenLink.download = `experiment_${partId}.csv`;
+      document.body.appendChild(hiddenLink);
+      hiddenLink.click();
+    }
   }
 }
