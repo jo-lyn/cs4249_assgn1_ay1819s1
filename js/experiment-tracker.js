@@ -1,7 +1,7 @@
 // Class used to track experiment
 class ExperimentTracker {
   constructor() {
-    this.id = (new URL(document.location)).searchParams.get("part_id");
+    this.partId = (new URL(document.location)).searchParams.get("part_id");
     this.trials = [];
     this.attempt = 0;
     this.trial = null;
@@ -36,7 +36,7 @@ class ExperimentTracker {
     this.endTime = Date.now();
     this.timeTaken = (this.endTime - this.startTime) / 1000;
     this.trials.push([
-      this.id,
+      this.partId,
       this.trial,
       this.attempt,
       this.menuType,
