@@ -2,11 +2,16 @@
 
 ## Experiment Process
 
-- Pre-experiment Questionnaire (`pre-quest.html`): Participants will be given a link to the pre-questionnaire.
-- Instructions (`index.html`): After submitting, a link to the instructions will be displayed on the form.
-- Practice Trials: Participants will be shown a link to the practice trials at the instructions page.
-- Main experiment: When participants are ready, they will select their participant ID on the instructions page to proceed to main experiment.
-- Post-experiment Questionnare (`post-quest.html`): Clicking 'Done' after the last menu selection will take the participants to the post-experiment questionnaire.
+1. Pre-experiment Questionnaire (`pre-quest.html`)
+    - Participants will be given a link to the pre-questionnaire
+2. Instructions (`index.html`)
+    - After submitting their answers, a link to the instructions will be displayed on the form
+3. Practice Trials
+    - Participants will be shown a link to the practice trials at the instructions page.
+4. Main experiment
+    - When participants are ready, they will select their participant ID on the instructions page to proceed to the main experiment
+5. Post-experiment Questionnare (`post-quest.html`)
+    - Clicking 'Done' after the last menu selection will take the participants to the post-experiment questionnaire
 
 ## Added Variables
 
