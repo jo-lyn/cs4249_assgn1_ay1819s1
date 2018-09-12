@@ -21,6 +21,13 @@
 - Efficiency (%) : 1 / Number of menu popups before selection
 - Number of popups is recorded to csv file
 
+### Logging
+New variables logged to csv file:
+- Participant ID
+- Input Style
+- Popup Count
+- Time Taken (End Time - Start Time)
+
 ---
 
 This repository contains a basic interface and instrumentation to perform an empirical evaluation of Marking Menus and Radial Menus. You are expected to modify the code to perform the following tasks
